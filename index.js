@@ -8,8 +8,8 @@ window.addEventListener('DOMContentLoaded', () => {
   iframe.src = url + (localStorage.u ? '?u=' + localStorage.u : '');
   window.addEventListener('beforeinstallprompt', bip);
   window.addEventListener('message', message);
-  btninstall.addEventListener('click', install);
-  btnsubscribe.addEventListener('click', subdev);
+  if(btninstall) btninstall.addEventListener('click', install);
+  if(btnsubscribe) btnsubscribe.addEventListener('click', subdev);
 });
 async function bip(e){
   e.preventDefault();
