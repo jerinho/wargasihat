@@ -83,3 +83,20 @@ async function message(event) {
     });
   }
 }
+async function search(){
+  if(carinama.value.length < 3) return alert('Tiada hasil. Spesifikkan carian atau betulkan');
+  try{erase(); disable();}catch(e){}
+  google.script.run.withSuccessHandler(function(){
+  }).call('gizi_search', carinama.value);
+}
+async function kunci(){
+  // if(!data) return alert('PAPARkan data individu dahulu');
+  var old = prompt('Masukkan kunci lama atau nama penuh jika belum set');
+  if(!old) return enable();
+  var key = prompt('Masukkan kunci baru');
+  if(!key) return enable();
+  disable();
+  kunci.key = key;
+  google.script.run.withSuccessHandler(function(){
+  }).call('gizi_key', search.row, old, key);
+}
