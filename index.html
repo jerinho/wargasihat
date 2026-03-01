@@ -1,99 +1,33 @@
-<script src="index.js"></script>
-<style>
-  #header {
-    display: flex !important;
-    align-items: flex-start !important;
-    padding: 10px !important;
-    padding-right: 100px !important;
-    border-bottom: 1px solid #ccc !important;
-    flex-wrap: wrap !important; /* responsive terus */
-    box-sizing: border-box !important;
-  }
-  #header-left {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    width: 200px !important;
-    flex-shrink: 0 !important;
-    box-sizing: border-box !important;
-  }
-  #header-left h2 {
-    margin: 0 !important;
-  }
-  #header-left #tagline {
-    margin: 0 !important;
-    font-size: 0.9em !important;
-    color: gray !important;
-  }
-  #header-right {
-    width: calc(100% - 300px) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-end !important;
-    flex-grow: 1 !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-  }
-  #inscari {
-    margin: 0 0 5px 0 !important;
-    font-size: 0.85em !important;
-    text-align: right !important;
-    word-break: break-word !important;
-  }
-  #search-row {
-    display: flex !important;
-    align-items: center !important;
-    gap: 5px !important;
-    flex-wrap: wrap !important;
-    box-sizing: border-box !important;
-  }
-  #carinama {
-    flex-grow: 1 !important;
-    min-width: 100px !important;
-    box-sizing: border-box !important;
-  }
-  #btnsearch, #btnkey, #btnclear {
-    width: 80px !important;
-    flex-shrink: 0 !important;
-    box-sizing: border-box !important;
-  }
-  #hnama {
-    margin: 5px 0 0 0 !important;
-    text-align: right !important;
-    flex-shrink: 0 !important;
-    box-sizing: border-box !important;
-  }
-  #hnama p {
-    margin: 0 !important;
-  }
-  @media (max-width:500px){
-    #header {flex-direction:column !important;align-items:stretch !important, padding: 10px !important;}
-    #header-left,#header-right {width:100% !important}
-    #header-right {align-items:flex-start !important;margin-top:10px !important}
-    #inscari,#hnama {text-align:left !important}
-  }
-</style>
-
-<div id="header">
-  <div id="header-left">
-    <h2>Warga Sihat 2.0</h2>
-    <p id="tagline">Siap melayani</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Warga Sihat</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+</head>
+<body>
+  <iframe id='iframe' src='https://script.google.com/macros/s/AKfycbwa8FqTbo3zAPodBzXq7_-rrj3EiqtMMxsfbcDq4KIaoNpOkfx6ZTfxIiIHyYN3BsxClg/exec'></iframe>
+  <div id='buttons'>
+    <button id="btninstall" style="display:none;">Install App</button>
+    <button id="btnsubscribe" style="display:none;">Subscribe</button>
   </div>
-
-  <div id="header-right">
-    <p id="inscari">
-      Sila buat carian nama terlebih dahulu. Tidak perlu masukkan nama penuh. Cuma pastikan frasa yang dimasukkan unik untuk dapat result. Boleh sertakan lebih daripada satu perkataan. Boleh masukkan frasa kunci jika telah ditetapkan.
-    </p>
-
-    <div id="search-row">
-      <input id="carinama" placeholder="Taip nama..." />
-      <h4 id="hnama">
-        <p>Nama :</p>
-        <p id="indnama">Taip nama pada kotak teks dan klik CARI</p>
-      </h4>
-      <button id="btnsearch" onclick="search()"><i class="fas fa-search"></i> CARI</button>
-      <button id="btnkey" onclick="kunci()"><i class="fas fa-key"></i> KUNCI</button>
-      <button id="btnclear" onclick="confirm('Paparan individu akan dipadam') && erase()"><i class="fas fa-eraser"></i> PADAM</button>
-    </div>
-  </div>
-</div>
+  <script type="module" src="index.js"></script>
+</body>
+</html>
+<!--
+<script>
+  const url = 'https://script.google.com/macros/s/AKfycbwa8FqTbo3zAPodBzXq7_-rrj3EiqtMMxsfbcDq4KIaoNpOkfx6ZTfxIiIHyYN3BsxClg/exec?page=app';
+  fetch(url).then(res => res.text()).then(html => {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(err => {
+    document.open();
+    document.write(err);
+    document.close();
+  });
+</script>
+-->
